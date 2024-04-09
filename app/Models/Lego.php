@@ -9,6 +9,6 @@ class Lego extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "code","name","pieces", "price"
+        "code","name","pieces","price"
     ];
 }
