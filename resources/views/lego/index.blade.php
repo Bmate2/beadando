@@ -25,14 +25,14 @@
                 <p class="card-text">{{ $product->price }} Ft</p>
                 <div class="row">
                     <div class="col">
-                        <form action="{{ route('legos.destroy', $product->id) }}" method="POST">
+                        <form action="{{ route('lego.destroy', $product->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-block">Törlés</button>
                         </form>
                     </div>
                     <div class="col">
-                        <a href="{{ route('legos.edit', $product->id) }}" class="btn btn-primary btn-block">Szerkesztés</a>
+                        <a href="{{ route('lego.edit', $product->id) }}" class="btn btn-primary btn-block">Szerkesztés</a>
                     </div>
                 </div>
             </div>
