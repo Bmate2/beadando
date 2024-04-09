@@ -23,29 +23,41 @@
     </div>
     @endif
 
-    <form method="post" action="{{route('lego.create')}}">
-        @csrf
-        <div>
-            <label>Code:</label>
-            <input type="text" name="code" placeholder="Code" value="{{old('code')}}"/>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form action="{{ route('lego.create') }}" method="POST">
+                    @csrf
+
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="code">Code:</label>
+                        <input type="text" id="code" name="code" class="form-control" placeholder="Code">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price" class="form-control" placeholder="Price">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pieces">Pieces:</label>
+                        <input type="number" id="pieces" name="pieces" class="form-control" placeholder="Pieces">
+                    </div>
+
+                    <div class="display:flex mx-auto">
+                        <button type="submit" class="btn btn-primary btn-block">Add LEGO</button>
+                    </div>
+                    
+                </form>
+            </div>
         </div>
-        <div>
-            <label>Name:</label>
-            <input type="text" name="name" placeholder="Name" value="{{old('name')}}"/>
-        </div>
-        <div>
-            <label>Pieces:</label>
-            <input type="text" name="pieces" placeholder="Pieces" value="{{old('pieces')}}"/>
-        </div>
-        <div>
-            <label>Price:</label>
-            <input type="text" name="price" placeholder="Price" value="{{old('price')}}"/>
-        </div>
-        <div>
-            <input type="submit" value="Add new product">
-        </div>
-    </form>
-    <a href="{{ route('lego.index') }}" class="btn btn-primary">Átváltás másik oldalra</a>
+    </div>
+
 
 </body>
 

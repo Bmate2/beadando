@@ -18,15 +18,28 @@
     <h1>LEGO termékek</h1>
     <div class="row">
     @foreach($legoProducts as $product)
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $product->name }}</h5>
-                    <p class="card-text">{{ $product->price }} Ft</p>
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ $product->name }}</h5>
+                <p class="card-text">{{ $product->price }} Ft</p>
+                <div class="row">
+                    <div class="col">
+                        <form action="{{ route('legos.destroy', $product->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-block">Törlés</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <a href="{{ route('legos.edit', $product->id) }}" class="btn btn-primary btn-block">Szerkesztés</a>
+                    </div>
                 </div>
             </div>
         </div>
-    @endforeach
+    </div>
+@endforeach
+
     </div>
 </body>
 </html>
