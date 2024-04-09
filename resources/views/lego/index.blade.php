@@ -27,11 +27,14 @@
                     <div class="col">
                         <form action="{{ route('lego.destroy', $product->code) }}" method="POST">
                             @csrf
-                            <button type="submit" class="btn btn-danger btn-block">Törlés</button>
+                            <button type="submit" class="btn btn-danger btn-block">Delete</button>
                         </form>
                     </div>
                     <div class="col">
-                        <a href="{{ route('lego.edit', $product->code) }}" class="btn btn-primary btn-block">Szerkesztés</a>
+                        <form action="{{ route('lego.edit', $product->code) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-primary btn-block">Update</button>
+                        </form>
                     </div>
                 </div>
             </div>
