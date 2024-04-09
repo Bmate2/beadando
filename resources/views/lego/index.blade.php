@@ -9,6 +9,7 @@
     
 </head>
 <body>
+    @include("layouts.navbar")
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -27,7 +28,5 @@
         </div>
     @endforeach
     </div>
-
-    <a href="{{ route('lego.create') }}" class="btn btn-primary">Átváltás másik oldalra</a>
 </body>
 </html>

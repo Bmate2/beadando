@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    @include("layouts.navbar")
     <h1>Create a LEGO product</h1>
 
     @if($errors->any())
