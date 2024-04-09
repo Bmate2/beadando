@@ -19,7 +19,7 @@ class LegoController extends Controller
             "code"=>"required",
             "name"=>"required",
             "pieces"=>"required",
-            "price"=>["required"]
+            "price"=>"required"
         ]);
         //todo: get auth access
         //todo: save submitted datta
