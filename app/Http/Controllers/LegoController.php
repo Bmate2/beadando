@@ -30,13 +30,14 @@ class LegoController extends Controller
             "price" => $request->price
         ]);
         //todo: redirect user and show success
-        return redirect("lego")->with("success","Sikeres LEGO hozzáadás.");
+        return redirect("/")->with("success","Sikeres LEGO hozzáadás.");
     }
     public function destroy($code){
         Lego::where('code','=', $code)->delete();
         return redirect()->route('lego.index')->with('success', 'A LEGO termék sikeresen törölve lett.');
     }
     public function edit($code){
-        dd();
+        $lego = Lego::where('code', $code);
+        return view('lego.edit', compact('lego'));
     }
 }
