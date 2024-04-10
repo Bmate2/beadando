@@ -12,7 +12,7 @@
         <h1>Update LEGO product</h1>
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('lego.edit', $lego->code) }}" method="POST">
+                <form action="{{ route('lego.update', $lego->code) }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="name">Name:</label>

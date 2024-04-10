@@ -40,4 +40,13 @@ class LegoController extends Controller
         $lego=Lego::where('code','=', $code)->first();
         return view('lego.edit', compact('lego'));
     }
+
+    public function update(Request $request, $code){
+        $request->validate([
+            'code'=> 'required',
+            'name'=> 'required',
+            'pieces'=> 'required',
+            'price'=> 'required']);
+        Lego::where('code','=', $code)->update(['name','pieces','price'],[$request->name, $request->pieces, $request->price]);
+    }
 }
