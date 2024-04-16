@@ -22,12 +22,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="name">Code:</label>
-                        <input type="text" id="code" name="code" value="{{ $lego->code }}" class="form-control"
-                            placeholder="Code">
-                    </div>
-
-                    <div class="form-group">
                         <label for="price">Price:</label>
                         <input type="number" id="price" name="price" value="{{ $lego->price }}" class="form-control"
                             placeholder="Price">
