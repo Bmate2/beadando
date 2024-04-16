@@ -17,21 +17,22 @@
     @endif
     <h1>LEGO termékek</h1>
     <div class="row">
-    @foreach($legoProducts as $product)
+    @foreach($legoProducts as $lego)
     <div class="col-md-4 mb-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">{{ $product->name }}</h5>
-                <p class="card-text">{{ $product->price }} Ft</p>
+                <h5 class="card-title">{{ $lego->name }}</h5>
+                <p class="card-text">{{ $lego->price }} Ft</p>
                 <div class="row">
                     <div class="col">
-                        <form action="{{ route('lego.destroy', $product->code) }}" method="POST">
+                        <form action="{{ route('lego.destroy', $lego->code) }}" method="POST">
                             @csrf
+                            @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-block">Delete</button>
                         </form>
                     </div>
                     <div class="col">
-                        <form action="{{ route('lego.edit', $product->code) }}" method="POST">
+                        <form action="{{ route('lego.edit', $lego->code) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-primary btn-block">Update</button>
                         </form>
