@@ -15,7 +15,7 @@
             {{ session('success') }}
         </div>
     @endif
-    <h1>LEGO termékek</h1>
+    <h1>LEGO products</h1>
     <div class="row">
     @foreach($legoProducts as $lego)
     <div class="col-md-4 mb-4">
