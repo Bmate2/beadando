@@ -12,7 +12,7 @@
           <a class="nav-link active" href="{{route("login.page")}}">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{{route("lego.create")}}">Register</a>
+          <a class="nav-link active" href="{{route("register.page")}}">Register</a>
         </li>
       </ul>
     </div>

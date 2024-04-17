@@ -13,3 +13,6 @@ Route::post('/lego/create', [LegoController::class,'store']);
 Route::post('/lego/{lego}/edit', [LegoController::class,'edit'])->name('lego.edit');
 Route::put('/lego/{lego}', [LegoController::class,'update'])->name('lego.update');
 Route::get('/login',[UserController::class,'loginPage'])->name('login.page');
+Route::post('/login',[UserController::class,'login'])->name('login');
+Route::get('/register',[UserController::class,'registerPage'])->name('register.page');
+Route::post('/register',[UserController::class,'register'])->name('register');
